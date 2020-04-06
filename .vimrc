@@ -1,5 +1,7 @@
 " Some notes to help understanding this .vimrc
 " - `:echo has("python3")` -> seems to check what `:version` shows.
+" - Good reachable keys are: ",", ".", "<space>", "ö", "ä", "ü"
+
 " required for YouCompleteMe
 set nocompatible
 set encoding=utf-8
@@ -127,6 +129,7 @@ inoremap jj <ESC>
 map ,cd :cd %:p:h <CR>
 map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
 map ,m :make<CR>
+map ,f /
 " Move between windows more comfortable (also in terminal mode)
 map ,j <c-w>j<c-w><CR>
 tmap ,j <c-w>j<c-w><CR>
