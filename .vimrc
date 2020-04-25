@@ -125,9 +125,11 @@ endif
 
 noremap <space> :
 inoremap jj <ESC>
+noremap ,o o <ESC>
 
 map ,cd :cd %:p:h <CR>
 map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+map ,s :sp <C-R>=expand("%:p:h") . "/" <CR>
 map ,m :make<CR>
 map ,f /
 " Move between windows more comfortable (also in terminal mode)

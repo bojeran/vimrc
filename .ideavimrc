@@ -2,6 +2,7 @@ noremap <space> :
 noremap ,f /
 noremap ,j *
 noremap ,k #
+noremap ,o o <ESC>
 
 inoremap jj <ESC>
 
