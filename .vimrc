@@ -22,6 +22,8 @@ if has("win32")
     Plugin 'bogado/file-line'
     Plugin 'ycm-core/YouCompleteMe'
     Plugin 'OmniSharp/omnisharp-vim'
+elseif has("OSX")
+    Plugin 'pearofducks/ansible-vim'
 endif
 
 call vundle#end()            " required
@@ -102,6 +104,12 @@ if has("win32")
     syntax on                  " Enable syntax highlighting
     colorscheme desert
     "set lines=30 columns=120   " Initial window size
+elseif has("OSX")
+    au BufRead,BufNewFile *.yml set filetype=yaml.ansible
+    " let g:ansible_unindent_after_newline = 1
+    let g:ansible_attribute_highlight = "ob"
+    let g:ansible_name_highlight = 'd'
+    let g:ansible_extra_keywords_highlight = 1
 endif
 
 
@@ -145,10 +153,14 @@ tmap ,l <c-w>l<c-w><CR>
 map ,w <c-w>w<c-w><CR>
 tmap ,w <c-w>w<c-w><CR>
 
+" tmap ,gt <c-w>
+
 
 " didn't use + before therefore i use it to quickly paste
-map + "+p
-map ü "+p
+" map + "+p
+noremap ,p "+p
+xnoremap ,y "+y
+" map ü "+p
 " lmap -> Insert, Command-Line, Lang-Args
 " cmap -> Command-Line
 cmap ü <c-r>+
